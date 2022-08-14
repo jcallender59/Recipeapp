@@ -14,10 +14,9 @@ package com.qa.recipes.controller;
         import org.springframework.web.bind.annotation.RequestBody;
         import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.RestController;
-
         import com.qa.recipes.domain.recipes;
         import com.qa.recipes.repo.reciperepo;
-
+//
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")

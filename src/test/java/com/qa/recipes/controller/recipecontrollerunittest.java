@@ -1,8 +1,26 @@
 package com.qa.recipes;
 
+import java.util.ArrayList;
 import java.util.List;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,8 +35,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.qa.recipes.service.recipeservice;
 import com.qa.recipes.domain.recipes;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -43,6 +64,19 @@ public class recipecontrollerunittest {
                         .content(entryAsJSON))
                 .andExpect(status().isCreated())
                 .andExpect(content().json(entryAsJSON));
+    }
+
+    public void testReadAll() throws Exception {
+        List<recipes> mockOutput = new ArrayList<Drink>();
+        mockOutput.add(new recipes(1L, "Jalfrezi curry", "Joe", "Beef, spices, water"));
+        mockOutput.add(new recipes(2L, "Veg soup", "Mike", "Vegetables, herbs, water"));
+        String mockOutputAsJson = this.mapper.writeValueAsString(mockOutput);
+
+        Mockito.when(this.service.getAll()).thenReturn(mockOutput);
+
+        mvc.perform(get("/drink/readAll"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(mockOutputAsJson));
     }
 
 
