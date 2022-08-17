@@ -1,39 +1,41 @@
 package com.qa.recipes.service;
 
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
-import com.qa.recipes.domain.recipes;
-import com.qa.recipes.repo.reciperepo;
+
+import com.qa.recipes.domain.Recipes;
+import com.qa.recipes.repo.recipeRepo;
 
 @Service
-public class recipeservice implements ServiceMethods<recipes>{
+public class recipeService implements ServiceMethods<Recipes>{
 
-    //NOT making a new object, creating a variable of the type drinkRepo
-    private reciperepo repo;
+    //NOT making a new object, creating a variable of the type RecipesRepo
+    private recipeRepo repo;
 
     //Above is different to this, as we are trying to instantiate an object below (We cant do this to an interface)
-//	drinkRepo repos = new drinkRepo();
+//	RecipesRepo repos = new RecipesRepo();
 
 
     //Constructor
-    public recipeservice(reciperepo repo) {
+    public recipeService(recipeRepo repo) {
         this.repo = repo;
     }
 
     @Override
-    public recipes create(recipes recipes) {
+    public Recipes create(Recipes recipes) {
         return this.repo.save(recipes);
     }
 
     @Override
-    public List<recipes> getAll() {
+    public List<Recipes> getAll() {
         return this.repo.findAll();
     }
 
     @Override
-    public recipes getById(long id) {
-        Optional<recipes>   optionalRecipes = this.repo.findById(id);
+    public Recipes getById(long id) {
+        Optional<Recipes> optionalRecipes = this.repo.findById(id);
         if(optionalRecipes.isPresent()) {
             return optionalRecipes.get();
         }
@@ -41,13 +43,13 @@ public class recipeservice implements ServiceMethods<recipes>{
     }
 
     @Override
-    public recipes update(long id, recipes recipes) {
-        Optional<recipes> existingDrink = this.repo.findById(id);
-        if(existingDrink.isPresent()) {
-            recipes existing = existingDrink.get();
-            existing.setName(recipes.getName());
-            existing.setAuthor(recipes.getAuthor());
-            existing.setIngredients(recipes.getIngredients());
+    public Recipes update(long id, Recipes Recipes) {
+        Optional<Recipes> existingRecipes = this.repo.findById(id);
+        if(existingRecipes.isPresent()) {
+            Recipes existing = existingRecipes.get();
+            existing.setName(Recipes.getName());
+            existing.setAuthor(Recipes.getAuthor());
+            existing.setIngredients(Recipes.getIngredients());
             return this.repo.saveAndFlush(existing);
         }
 
@@ -62,3 +64,9 @@ public class recipeservice implements ServiceMethods<recipes>{
     }
 
 }
+
+
+
+
+
+
