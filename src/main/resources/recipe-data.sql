@@ -1,0 +1,1 @@
+INSERT INTO recipes (name, author, ingredients) VALUES ('Meat curry','Joseph', 'Spices, meat, water');
