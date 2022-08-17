@@ -20,9 +20,9 @@ Can be done by means of JUnit/Mockito (as the dependencies are included within t
 ```
 http://localhost:8080/recipes/create
 http://localhost:8080/recipes/readAll
-http://localhost:8080/readById/id
-http://localhost:8080/update/id
-http://localhost:8080/delete/id
+http://localhost:8080/recipes/readById/id
+http://localhost:8080/recipes/update/id
+http://localhost:8080/recipes/delete/id
 ```
 ### Project management board
 ```
