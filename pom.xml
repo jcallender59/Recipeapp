@@ -9,11 +9,11 @@
 		<version>2.6.1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.springdrinks</groupId>
-	<artifactId>Spring-Drinks</artifactId>
+	<groupId>com.qa.recipes</groupId>
+	<artifactId>Recipe-App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Spring-Drinks</name>
-	<description>Demo project for Spring Boot</description>
+	<name>RecipeApp</name>
+	<description>RecipeApp</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
