@@ -1,0 +1,30 @@
+QA Recipe Application – MoSCoW Prioritisation
+
+Must have:
+
+    • As a user, I want to be able to create entries for recipes in a database, so that I can add new recipes to my inventory.
+    • As a user, I want to be able to read the entire contents of the recipe database, so that at a glance I can see all the recipes.
+    • As a user, I want to be able to read a single recipe in the database.
+    • As a user, I want to be able to update a single recipe in the database.
+    • As a user, I want to be able to delete a single recipe in the database, if I am no longer wishing to have that recipe in the database.
+    • As a user, I want a product that “just works”, so that I’m not dealing with technical issues or excessive down time.
+    • As a developer, I want to assess potential risks at the start of the project, so that I can mitigate them or avoid them as much as possible.
+    • As a developer, I want to document aspects of the development process, so that I can monitor progress and learn from any issues that arise.
+    • As a developer, I want to ensure individual methods in my code are performing as expected, so that any fundamental bugs are flagged and corrected prior to further testing.
+    • As a developer, I want to ensure the entire program is performing as expected, so that I can present it to a user without any obvious flaws.
+
+Should have:
+
+    • As a developer, I want to ensure my “recipes” and “authors” entities have been clearly thought out at the start of the project, so that I can minimise costly changes during/after development.
+    • As a developer, I want to have exception handling.
+    • As a developer, I want to achieve over 80% coverage of the relevant code, so that I can be confident that I am providing my customer with a robust produce that adheres to industry standards.
+
+Could have:
+
+    • As a user, I want the software to prevent me from entering invalid data, so that the information in the database is guaranteed to be logical and relevant.
+
+Won’t have:
+
+    • As a user, I want to apply machine learning to my database, so that I can automate recipe creation/editing based on specified factors.
+
+
